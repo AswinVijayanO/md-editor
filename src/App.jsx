@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './App.css'
 import { parseMD } from './utils/md-utils'
-
+import htm2PDF from 'html2PDF.js'
 const content = `
 \# A demo of \`react-markdown\`
 
@@ -27,26 +27,34 @@ hello
 
 function App() {
   const [text, setText] = useState(content)
-  
-  useEffect(()=>{
-    
-  },[])
 
+  useEffect(() => {
+
+  }, [])
+  const print=()=>{
+    let element = document.getElementById("content")
+    htm2PDF().from(element).toPdf().save('myfile.pdf')
+  }
   return (
     <>
-    <div className='container'>
-    <div className='left'>
-      {/* {text} */}
-      <textarea className='input-area' type='text' value={text} onChange={(e)=>{
-        setText(e.target.value)
-      }}></textarea>
-    </div>
-    <div className={'right markdown'} style={{textAlign: 'left'}}>
-    {
-    parseMD(text)
-    }
-    </div>
-    </div>
+      <div className='container'>
+        <div className='left'>
+          {/* {text} */}
+          <textarea className='input-area' type='text' value={text} onChange={(e) => {
+            setText(e.target.value)
+          }}></textarea>
+        </div>
+        <div className={'right markdown'} style={{ textAlign: 'left' }}>
+          <div className='preview-top-bar'>
+          <button onClick={print}>Print 🖨️</button>
+          </div>
+          <div className='content-class' id="content">
+          {
+            parseMD(text)
+          }
+          </div>
+        </div>
+      </div>
     </>
   )
 }
