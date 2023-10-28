@@ -1,0 +1,55 @@
+#root {
+  padding: 2rem;
+  text-align: center;
+  font-family: DM Sans;
+  --primary-color:#646cff;
+  --primary-bg:#646cff1f;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  height: calc(100vh - 100px);
+}
+.input-area {
+  width:95%;
+  height: 95%;
+  background-color: #c9c9c930;
+  font-family: DM Mono;
+  border: none;
+  outline: none;
+  padding: 8px;
+  border-radius: 12px;
+  color: #000000cf;
+  resize: unset;
+}
+.left {
+  max-height: 100vh;
+  width: 40vw;
+  overflow-y: scroll;
+}
+.right {
+  max-height: 100vh;
+  width: 50vw;
+  overflow-y: scroll;
+  padding: 1em;
+}
+.markdown code {
+  background-color: #c9c9c991;
+  padding: 0px 6px;
+  border-radius: 6px;
+  font-family: DM Mono;
+  color: #000000a5;
+}
+.markdown pre {
+  font-family: DM Mono;
+  padding: 6px;
+  color: rgba(254, 254, 254, 0.925);
+  background-color: #000000a5;
+}
+.markdown blockquote {
+  border-left: 4px solid  var(--primary-color);
+  padding: 8px;
+  border-radius: 2px;
+  background-color:  var(--primary-bg);
+}
