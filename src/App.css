@@ -30,9 +30,10 @@
 }
 .right {
   max-height: 100vh;
-  width: 50vw;
+  width: 55vw;
   overflow-y: scroll;
-  padding: 1em;
+  padding: 0 1em;
+  
 }
 .markdown code {
   background-color: #c9c9c991;
@@ -52,4 +53,17 @@
   padding: 8px;
   border-radius: 2px;
   background-color:  var(--primary-bg);
+}
+.preview-top-bar{
+  width: 55vw;
+  height: 44px;
+  position: fixed;
+  padding: 8px;
+  backdrop-filter: blur(10px);
+  background-color: #ffffff66;
+  border-bottom: 1px solid #cccccc6c;
+}
+.content-class {
+  margin: 8px;
+  margin: 72px;
 }
