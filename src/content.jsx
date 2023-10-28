@@ -1,5 +1,5 @@
 export const content = `
-\# A demo of \`react-markdown\`
+# A demo of \`markdown\`
 
 \`react-markdown\` is a markdown component for React.
 
@@ -17,6 +17,7 @@ export const content = `
 - HELLO
 ## Contents
 
-Here is an example of a plugin in action [CommonMark](https://commonmark.org)
-hello
+>Here is an example of a plugin in action [CommonMark](https://commonmark.org)
+**__hello__** ..
+
 `;
