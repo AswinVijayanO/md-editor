@@ -1,46 +1,55 @@
 #root {
   padding: 2rem;
   text-align: center;
-  font-family: DM Sans;
-  --primary-color:#646cff;
-  --primary-bg:#646cff1f;
+  /* font-family: DM Sans; */
+  --primary-color: #646cff;
+  --primary-bg: #646cff1f;
 }
 
 .container {
   display: flex;
   flex-direction: row;
   height: calc(100vh - 100px);
+  margin: 0 auto;
+  width: 90vw;
 }
+
 .input-area {
-  width:95%;
+  width: 95%;
   height: 95%;
   background-color: #c9c9c930;
   font-family: DM Mono;
   border: none;
   outline: none;
-  padding: 8px;
+  padding: 8px 8px 8px 12px;
   border-radius: 12px;
   color: #000000cf;
   resize: unset;
 }
+
 .left {
   max-height: 100vh;
   width: 40vw;
   overflow-y: scroll;
 }
+
 .right {
   max-height: 100vh;
- 
+  margin: 0 auto;
   overflow-y: scroll;
   padding: 0 1em;
-  
+
 }
+
 .right.coll {
-  width: 100vw;
+  width: 70vw;
+  max-height: unset;
 }
+
 .right.exp {
   width: 55vw;
 }
+
 .markdown code {
   background-color: #c9c9c991;
   padding: 0px 6px;
@@ -48,19 +57,30 @@
   font-family: DM Mono;
   color: #000000a5;
 }
+
 .markdown pre {
   font-family: DM Mono;
   padding: 6px;
   color: rgba(254, 254, 254, 0.925);
   background-color: #000000a5;
 }
+
 .markdown blockquote {
-  border-left: 4px solid  var(--primary-color);
+  border-left: 4px solid var(--primary-color);
   padding: 8px;
   border-radius: 2px;
-  background-color:  var(--primary-bg);
+  background-color: var(--primary-bg);
 }
-.preview-top-bar{
+
+.markdown h1::after,
+.markdown h2::after {
+  content: ' ';
+  display: block;
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  margin-top: 8px;
+}
+
+.preview-top-bar {
   width: 55vw;
   height: 44px;
   position: fixed;
@@ -69,6 +89,10 @@
   background-color: #ffffff66;
   border-bottom: 1px solid #cccccc6c;
 }
+.coll .preview-top-bar {
+  width: 70vw;
+}
+
 .content-class {
   margin: 8px;
   margin: 72px;
