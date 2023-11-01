@@ -19,5 +19,8 @@ export const content = `
 
 >Here is an example of a plugin in action [CommonMark](https://commonmark.org)
 **__hello__** ..
+\`\`\`
+const s= ()=>{console.log("hello")
+\`\`\`
 
 `;

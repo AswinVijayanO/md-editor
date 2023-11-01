@@ -1,4 +1,5 @@
 import React from "react";
+import { Code } from "../custom-element";
 
 const breakLines = (story) => {
   if (story) {
@@ -170,6 +171,7 @@ const parseString = (string, currentLevel, nested = false) => {
 
 }
 const renderNode = (node, index) => {
+  console.log(node)
   if (Array.isArray(node)) {
     let elements = node.map(item => renderNode(item))
     return React.createElement('ul', {}, elements)
@@ -187,6 +189,14 @@ const renderNode = (node, index) => {
         }
         if (element === 'br') {
           return React.createElement(element)
+        }
+        if (element === "pre"){
+          const lang = node[element].split("\n")[0]
+          let code = node[element]
+          if(lang.length!=0) {
+            code = node[element].split("\n").slice(1).join("\n")
+          }
+          return <Code code={code} lang={lang}/>
         }
         return React.createElement(element, { key: index }, renderNode(node[element]))
       }
@@ -226,9 +236,9 @@ const generateNodes = (lines) => {
       trimmed = trimmed.split("").splice(1).join("")
     }
     if (codeBlock) {
-      if (trimmed.includes("```")) {
-        code = trimmed.split("```")[0]
-        trimmed = trimmed.split("```")[1]
+      if (line.includes("```")) {
+        code = line.split("```")[0]
+        trimmed = line.split("```")[1]
       }
     }
 

@@ -58,12 +58,12 @@
   color: #000000a5;
 }
 
-.markdown pre {
+.markdown pre code {
   font-family: DM Mono;
-  padding: 6px;
-  color: rgba(254, 254, 254, 0.925);
-  background-color: #000000a5;
-}
+  font-size: small;
+  background-color: unset;
+  padding: unset;
+} 
 
 .markdown blockquote {
   border-left: 4px solid var(--primary-color);
