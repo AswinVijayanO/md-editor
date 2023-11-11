@@ -42,7 +42,7 @@
 }
 
 .right.coll {
-  width: 70vw;
+  width: 100vws;
   max-height: unset;
 }
 
@@ -90,10 +90,14 @@
   border-bottom: 1px solid #cccccc6c;
 }
 .coll .preview-top-bar {
-  width: 70vw;
+  width: calc(100vw - 136px);
 }
 
 .content-class {
-  margin: 8px;
-  margin: 72px;
+  margin: 16px;
+  margin-top: 72px;
+  width : calc(100vw - 32px);
+}
+.coll .content-class {
+  margin: 16px;
 }

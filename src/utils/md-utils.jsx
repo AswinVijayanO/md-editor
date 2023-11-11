@@ -238,8 +238,12 @@ const generateNodes = (lines) => {
     if (codeBlock) {
       if (line.includes("```")) {
         code = line.split("```")[0]
-        trimmed = line.split("```")[1]
+        trimmed = trimmed.split("```")[1]
+        code = code == "\n" ? "":code 
+      } else {
+        code = line
       }
+     
     }
 
     if (!codeBlock && startsString(trimmed, "`") === 3) {
@@ -250,21 +254,18 @@ const generateNodes = (lines) => {
 
     parseString(trimmed, node)
     if (codeBlock) {
-      console.log(line)
       if (codeBlock === 1) {
         nodes = [...nodes, node]
         codes = [...codes, code.replace("```","")]
         codeBlock = 2
       } else if (line.trim().includes('```')) {
-        console.log("code blcok ended")
         codes = [...codes, code]
         nodes = [...nodes, {'pre':codes.join("\n") }, node]
         codes = []
         code = ""
         codeBlock = false
       } else {
-        console.log("code blcok continueing")
-        codes = [...codes, trimmed]
+        codes = [...codes, code]
       }
     } else if (node['li']) {
       if (!listIndex) {
